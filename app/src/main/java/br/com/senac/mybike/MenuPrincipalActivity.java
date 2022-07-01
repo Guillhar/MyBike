@@ -3,12 +3,13 @@ package br.com.senac.mybike;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 public class MenuPrincipalActivity extends AppCompatActivity implements View.OnClickListener {
-    CardView cardClient,carReservation,
-            cardMaintance,cardsales,cardacessories,cardCatalog;
+    CardView cardClient, carReservation,
+            cardMaintance, cardsales, cardacessories, cardCatalog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,26 @@ public class MenuPrincipalActivity extends AppCompatActivity implements View.OnC
 
     @Override
     public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.cardClient:
+                startActivity(new Intent(getApplicationContext(), ClienteActivity.class));
+                break;
+            case R.id.cardReservation:
+                startActivity(new Intent(getApplicationContext(), ReservasActivity.class));
+                break;
+            case R.id.cardMaintence:
+                startActivity(new Intent(getApplicationContext(), ManutencaoActivity.class));
+                break;
+            case R.id.cardSales:
+                startActivity(new Intent(getApplicationContext(), VendasActivity.class));
+                break;
+            case R.id.cardAccessories:
+                startActivity(new Intent(getApplicationContext(), AcessoriosActivity.class));
+                break;
+            case R.id.cardCatalog:
+                startActivity(new Intent(getApplicationContext(), CatalagosActivity.class));
+                break;
+        }
 
     }
 }
